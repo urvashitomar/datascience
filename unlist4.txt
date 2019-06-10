@@ -1,0 +1,27 @@
+
+unlist {base}	R Documentation
+Flatten Lists
+Description
+Given a list structure x, unlist produces a vector which contains all the atomic components which occur in x.
+
+Usage
+unlist(x, recursive = TRUE, use.names = TRUE)
+Arguments
+x	A list.
+recursive	logical. Should unlisting be applied to list components of x?
+use.names	logical. Should names be preserved?
+Details
+If recursive=FALSE, the function will not recurse beyond the first level items in x.
+
+By default, unlist tries to retain the naming information present in x. If use.names = FALSE all naming information is dropped.
+
+See Also
+c, as.list.
+
+Examples
+unlist(options())
+unlist(unlist(options(), use.names=F))# works for vectors or lists
+l.ex <- list(a = list(1:5, LETTERS[1:5]), b = "Z", c = NA)
+unlist(l.ex, rec = F)
+unlist(l.ex, rec = T)
+[Package Contents]
